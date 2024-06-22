@@ -29,6 +29,7 @@
         href="{{ `css/hyde.css` | relURL }}">
 
   {{ partial "theme-color.html" . }}
+  {{ partial "head.html" . }}
 
   {{ range $.Site.Params.customCss -}}
   <link type="text/css" rel="stylesheet" href="{{ . | relURL }}">
@@ -73,6 +74,8 @@
   {{ range $.Site.Params.customJs -}}
   <script src="{{ . | relURL }}"></script>
   {{- end}}
+
+  {{ partial "body.html" . }}
 
     {{ if not hugo.IsServer }}
       {{ template "_internal/google_analytics.html" . }}
